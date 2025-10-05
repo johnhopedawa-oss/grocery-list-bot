@@ -1,37 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grocery list bot
-  namespace: <namespace-name>
+  name: grocerylist-Deployment
   labels:
-    app: <app-name>
+    app: gcbot
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: <app-name>
+      app: gcbot
   template:
     metadata:
       labels:
-        app: <app-name>
+        app: gcbot
     spec:
       containers:
-        - name: <container-name>
+        - name: gcbot
           image: <image-name>:<tag>
-          imagePullPolicy: IfNotPresent
-          
-          ports:
-            - containerPort: 8080
-              name: http
-              protocol: TCP
+          imagePullPolicy: Always
           
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "100m"
+              memory: "100Mi"
+              cpu: "50m"
             limits:
-              memory: "512Mi"
-              cpu: "500m"
+              memory: "200Mi"
+              cpu: "150m"
           
           livenessProbe:
             httpGet:
