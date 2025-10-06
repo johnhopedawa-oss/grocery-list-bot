@@ -18,7 +18,6 @@ spec:
         - name: gcbot
           image: johnhopedawa/grocerylist:latest
           imagePullPolicy: Always
-          
           resources:
             requests:
               memory: "100Mi"
