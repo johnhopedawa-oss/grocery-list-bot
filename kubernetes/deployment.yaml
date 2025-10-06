@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: gcbot
-          image: docker.io/johnhopedawa/grocerylist:latest
+          image: johnhopedawa/grocerylist:latest
           imagePullPolicy: Always
           
           resources:
