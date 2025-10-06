@@ -29,7 +29,7 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/your-app-name:latest
-          ${{ secrets.DOCKER_USERNAME }}/your-app-name:${{ github.sha }}
-        cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/your-app-name:latest
+          ${{ secrets.DOCKER_USERNAME }}/grocerylist:latest
+          ${{ secrets.DOCKER_USERNAME }}/grocerylist:${{ github.sha }}
+        cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/grocerylist:latest
         cache-to: type=inline
