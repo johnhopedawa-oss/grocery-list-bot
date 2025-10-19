@@ -18,6 +18,12 @@ spec:
         - name: gcbot
           image: johnhopedawa/grocerylist:latest
           imagePullPolicy: Always
+          env:
+            - name: API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: telegram-bot-secret
+                  key: API_TOKEN
           resources:
             requests:
               memory: "100Mi"

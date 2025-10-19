@@ -14,7 +14,7 @@ Basic Echobot example, repeats messages.
 Press Ctrl-C on the command line or send a signal to the process to stop the
 bot.
 """
-
+import os
 import logging
 import random
 
@@ -22,6 +22,9 @@ from telegram import ForceReply, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
 
+# Grab environment variable; API token 
+
+API_TOKEN = os.getenv('API_TOKEN')
 # Enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -138,7 +141,7 @@ async def listhandler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 def main() -> None:
     """Start the bot."""
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token("8102123985:AAFcIfgoPt4bs_bOtjOBfGp5vflSerZ-iRY").build()
+    application = Application.builder().token(API_TOKEN).build()
 
 
     # on different commands - answer in Telegram
